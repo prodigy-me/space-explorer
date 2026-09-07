@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Space Explorer 🚀</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- STARFIELD BACKGROUND -->
+  <canvas id="starfield"></canvas>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">🚀 Space Explorer</div>
+    <ul class="nav-links">
+      <li><a href="#solar">Solar System</a></li>
+      <li><a href="#concepts">Concepts</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Explore the <span class="glow">Universe</span></h1>
+      <p class="hero-sub">Journey through planets, black holes, and the history of space exploration — in a fun, interactive way.</p>
+      <a href="#solar" class="btn-primary">Begin Your Journey ↓</a>
+    </div>
+    <div class="scroll-hint">scroll down</div>
+  </section>
+
+  <!-- SOLAR SYSTEM -->
+  <section id="solar">
+    <h2 class="section-title">☀️ Our Solar System</h2>
+    <p class="section-sub">Click any planet to learn fun facts!</p>
+    <div class="planets-grid" id="planetsGrid"></div>
+    <div class="planet-panel" id="planetPanel">
+      <button class="close-btn" id="closePanel">✕</button>
+      <div id="panelContent"></div>
+    </div>
+  </section>
+
+  <!-- CONCEPTS -->
+  <section id="concepts">
+    <h2 class="section-title">🔭 Mind-Bending Concepts</h2>
+    <p class="section-sub">Hover or tap a card to flip it and learn!</p>
+    <div class="cards-grid" id="conceptCards"></div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <h2 class="section-title">🌠 Space Exploration Timeline</h2>
+    <p class="section-sub">Scroll horizontally through humanity's greatest achievements</p>
+    <div class="timeline-wrapper">
+      <div class="timeline-track" id="timelineTrack"></div>
+    </div>
+    <div class="timeline-nav">
+      <button id="tlLeft">← Prev</button>
+      <button id="tlRight">Next →</button>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <h2 class="section-title">🧠 Space IQ Quiz</h2>
+    <p class="section-sub">Think you know space? Prove it!</p>
+    <div class="quiz-box" id="quizBox">
+      <div id="quizContent"></div>
+    </div>
+  </section>
+
+  <!-- FACTS -->
+  <section id="facts">
+    <h2 class="section-title">📡 Random Space Fact</h2>
+    <div class="fact-box">
+      <p id="factText">Loading a fun fact...</p>
+      <button class="btn-secondary" id="newFactBtn">🎲 New Fact</button>
+    </div>
+  </section>
+
+  <!-- ABOUT NEEV -->
+  <section id="about">
+    <div class="about-container">
+
+      <!-- LEFT: Photo + name card -->
+      <div class="about-left">
+        <div class="about-photo-wrap">
+          <div class="about-orbit-ring"></div>
+          <div class="about-orbit-ring about-orbit-ring--2"></div>
+          <img id="neevPhoto" src="" alt="Neev Gohel" class="about-photo" />
+          <span class="about-badge">B.Sc. IT</span>
+        </div>
+        <h3 class="about-name">Neev Gohel</h3>
+        <p class="about-tagline">Aspiring Technology Professional</p>
+        <div class="about-socials">
+          <span class="about-social-dot" title="IT Student"></span>
+          <span class="about-social-label">🎓 B.Sc. Information Technology</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Bio + skills + journey -->
+      <div class="about-right">
+        <div class="about-intro">
+          <h2 class="about-heading">Hello, I'm <span class="glow">Neev</span> 👋</h2>
+          <p class="about-bio">
+            I'm a B.Sc. Information Technology student with a genuine curiosity for
+            how technology shapes our world — from the security of digital systems to
+            the science of the universe. I enjoy building practical projects, exploring
+            new tools, and continuously learning across multiple domains of technology.
+          </p>
+          <p class="about-bio">
+            This Space Explorer website is one of the projects I built to combine my
+            interest in space science with hands-on web development practice.
+          </p>
+        </div>
+
+        <!-- Interests / Skills -->
+        <div class="about-skills-section">
+          <h4 class="about-subheading">Areas of Interest</h4>
+          <div class="about-skills-grid">
+            <div class="about-skill-card">
+              <span class="skill-icon">🔐</span>
+              <span class="skill-label">Cybersecurity</span>
+            </div>
+            <div class="about-skill-card">
+              <span class="skill-icon">☁️</span>
+              <span class="skill-label">Cloud Computing</span>
+            </div>
+            <div class="about-skill-card">
+              <span class="skill-icon">🌐</span>
+              <span class="skill-label">Web Development</span>
+            </div>
+            <div class="about-skill-card">
+              <span class="skill-icon">🤖</span>
+              <span class="skill-label">Artificial Intelligence</span>
+            </div>
+            <div class="about-skill-card">
+              <span class="skill-icon">🚀</span>
+              <span class="skill-label">Space &amp; Technology</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Journey -->
+        <div class="about-journey">
+          <h4 class="about-subheading">My Journey</h4>
+          <div class="journey-list">
+            <div class="journey-item">
+              <span class="journey-dot"></span>
+              <div>
+                <strong>Currently studying</strong> B.Sc. Information Technology,
+                building a strong foundation in software, networks, and systems.
+              </div>
+            </div>
+            <div class="journey-item">
+              <span class="journey-dot"></span>
+              <div>
+                <strong>Actively learning</strong> cybersecurity principles, cloud
+                platforms, and AI-assisted development workflows.
+              </div>
+            </div>
+            <div class="journey-item">
+              <span class="journey-dot"></span>
+              <div>
+                <strong>Building projects</strong> to put concepts into practice —
+                from interactive websites to technology experiments.
+              </div>
+            </div>
+            <div class="journey-item">
+              <span class="journey-dot"></span>
+              <div>
+                <strong>Goal:</strong> Grow into a well-rounded technology professional
+                who can contribute meaningfully across security, cloud, and software.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /about-right -->
+    </div><!-- /about-container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>🌌 Space Explorer 2025 &nbsp;|&nbsp; Built by <strong style="color:var(--accent)">Neev Gohel</strong></p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="scripts/photo.js"></script>
+  <script src="scripts/starfield.js"></script>
+  <script src="scripts/solarSystem.js"></script>
+  <script src="scripts/flipCards.js"></script>
+  <script src="scripts/timeline.js"></script>
+  <script src="scripts/quiz.js"></script>
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Intersection observer for fade-in sections
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('section').forEach(function(s) { observer.observe(s); });
+
+    // Random fact
+    var facts = [
+      "One million Earths could fit inside the Sun.",
+      "A day on Venus is longer than a year on Venus.",
+      "Neutron stars can spin 600 times per second.",
+      "The footprints on the Moon will last 100 million years.",
+      "There are more stars in the universe than grains of sand on Earth.",
+      "Space is completely silent — sound can't travel in a vacuum.",
+      "The Milky Way galaxy is about 100,000 light-years wide.",
+      "Saturn would float if you put it in water.",
+      "The Sun makes up 99.86% of the Solar System's mass.",
+      "Light from the Sun takes about 8 minutes to reach Earth.",
+      "A year on Mercury is just 88 Earth days.",
+      "Jupiter's Great Red Spot is a storm that's lasted 350+ years.",
+      "The Andromeda Galaxy will collide with the Milky Way in ~4.5 billion years.",
+      "Black holes don't actually suck — they just have extreme gravity.",
+      "There are more possible iterations of a game of chess than atoms in the observable universe."
+    ];
+    var factText = document.getElementById('factText');
+    function showFact() {
+      factText.style.opacity = 0;
+      setTimeout(function() {
+        factText.textContent = facts[Math.floor(Math.random() * facts.length)];
+        factText.style.opacity = 1;
+      }, 300);
+    }
+    document.getElementById('newFactBtn').addEventListener('click', showFact);
+    showFact();
+  </script>
+</body>
+</html>
